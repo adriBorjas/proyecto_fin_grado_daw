@@ -1,0 +1,142 @@
+.error-section {
+    padding: 80px 0;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.error-container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-icon {
+    font-size: 64px;
+    color: #dc3545;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.error-description {
+    color: #6c757d;
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-back, .btn-home {
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-back {
+    background: #f8f9fa;
+    color: #212529;
+    border: 2px solid #dee2e6;
+}
+
+.btn-home {
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 119, 204, 0.3);
+}
+
+.btn-back:hover {
+    background: #e2e6ea;
+    text-decoration: none;
+}
+
+.btn-home:hover {
+    background: linear-gradient(135deg, #0062a8, #004985);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 119, 204, 0.4);
+    text-decoration: none;
+}
+
+/* Estilos para detalles técnicos de error */
+.error-technical-details {
+    margin-top: 20px;
+    text-align: left;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 15px;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.error-technical-title {
+    font-weight: bold;
+    color: #dc3545;
+    margin-bottom: 5px;
+}
+
+.error-code {
+    font-family: monospace;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.error-trace-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.btn-toggle-trace {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-toggle-trace:hover {
+    background-color: #5a6268;
+}
+
+.error-trace {
+    margin-top: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: left;
+}
+
+.error-trace pre {
+    margin: 0;
+    font-family: monospace;
+    white-space: pre-wrap;
+    font-size: 12px;
+    color: #333;
+}

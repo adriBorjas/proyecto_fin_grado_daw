@@ -1,0 +1,310 @@
+/* Estilos específicos para el dashboard de administración */
+.admin-section {
+    padding: 30px 0;
+}
+
+.admin-section h2 {
+    color: #0077cc;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.admin-panel {
+    margin-bottom: 40px;
+}
+
+.admin-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.admin-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.admin-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.admin-card h4 {
+    color: #0077cc;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+.admin-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Ajuste para tablets y dispositivos móviles */
+@media (max-width: 992px) {
+    .admin-cards {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .admin-card.citas-card {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 576px) {
+    .admin-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilo para el botón de volver al panel de administración */
+.admin-back-link {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-back-admin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f8f9fa;
+    color: #0077cc;
+    border: 1px solid #0077cc;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.btn-back-admin:hover {
+    background-color: #0077cc;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-back-admin i {
+    transition: transform 0.3s ease;
+}
+
+.btn-back-admin:hover i {
+    transform: translateX(-3px);
+}
+
+/* Mejorar el campo de descripción de productos */
+textarea#descripcion {
+    min-height: 150px;
+    padding: 12px;
+    resize: vertical;
+    width: 100%;
+    font-family: inherit;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+textarea#descripcion:focus {
+    border-color: #0077cc;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+}
+
+/* Añadir estilo de borde azul al hacer foco igual que los demás inputs */
+.auth-form textarea#descripcion {
+    border: 2px solid #0077cc;
+    border-radius: 5px;
+    padding: 12px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.auth-form textarea#descripcion:focus {
+    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+}
+
+/* Estilo general para mejorar todos los campos del formulario */
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="number"],
+.auth-form input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.auth-form input:focus {
+    border-color: #0077cc;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #495057;
+}
+
+/* Estilos para la sección de disponibilidad */
+.availability-panel {
+    margin-bottom: 40px;
+}
+
+.availability-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.availability-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.availability-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.availability-card h4 {
+    color: #0077cc;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+.availability-card p {
+    margin-bottom: 20px;
+    color: #6c757d;
+}
+
+/* Estilos para los horarios */
+.time-slot-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+.btn-remove-slot {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-remove-slot:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+}
+
+/* Tabla de días bloqueados */
+.blocked-days-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.blocked-days-table th,
+.blocked-days-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.blocked-days-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.btn-unblock-day {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.btn-unblock-day:hover {
+    background-color: #218838;
+}
+
+/* Lista de días bloqueados en dashboard */
+.blocked-days-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.blocked-days-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.blocked-days-list li:last-child {
+    border-bottom: none;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.reason-error {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.reason-error.visible {
+    display: block;
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+    .availability-cards .availability-card {
+        grid-column: 1 / -1;
+    }
+}

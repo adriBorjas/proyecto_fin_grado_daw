@@ -1,0 +1,329 @@
+/* Estilos específicos para la administración */
+.image-preview {
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.image-preview h4 {
+    margin-bottom: 10px;
+    color: #0077cc;
+    font-size: 16px;
+}
+
+.image-preview img {
+    display: block;
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Reorganización de las tarjetas de administración */
+.admin-panel {
+    margin-bottom: 30px;
+}
+
+.admin-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+@media (min-width: 992px) {
+    .admin-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Asegurar que usuarios y productos estén en la primera fila */
+    .admin-card.usuarios-card { order: 1 !important; }
+    .admin-card.productos-card { order: 2 !important; }
+    
+    /* Disponibilidad aparece después de usuarios y productos */
+    .admin-card.disponibilidad-card {
+        grid-column: 1 / -1 !important;
+        order: 3 !important;
+    }
+    
+    /* Citas aparece después de disponibilidad */
+    .admin-card.citas-card,
+    .admin-cards .admin-card:nth-child(4) {
+        grid-column: 1 / -1 !important;
+        order: 4 !important;
+    }
+}
+
+/* Usuarios y productos en la primera fila (orden flexible) */
+.admin-card.usuarios-card { order: 1 !important; }
+.admin-card.productos-card { order: 2 !important; }
+
+/* Disponibilidad aparece en toda la fila debajo de usuarios y productos */
+.admin-card.disponibilidad-card {
+    grid-column: 1 / -1 !important;
+    order: 3 !important;
+}
+
+/* Citas aparece en toda la fila debajo de disponibilidad */
+.admin-card.citas-card {
+    grid-column: 1 / -1 !important;
+    order: 4 !important;
+}
+
+/* Estilos adicionales para mejorar la apariencia de la card de disponibilidad */
+.admin-card.disponibilidad-card .card-description {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.availability-summary {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.availability-summary h5 {
+    color: #0077cc;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.blocked-days-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.blocked-days-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blocked-days-list li:last-child {
+    border-bottom: none;
+}
+
+/* Estilos para la lista de horarios bloqueados */
+.blocked-hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.blocked-hours-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #dc3545;
+}
+
+.blocked-hours-list li:last-child {
+    border-bottom: none;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+/* Mejoras para que sea más responsivo */
+@media (max-width: 992px) {
+    .admin-card {
+        max-width: 100%;
+    }
+    
+    .admin-card.usuarios-card,
+    .admin-card.productos-card {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Estilos para la tabla de citas de administración */
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.appointments-table th, .appointments-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.appointments-table th {
+    background-color: #e6f2ff;
+    color: #0077cc;
+    font-weight: 600;
+}
+
+.appointments-table tr:last-child td {
+    border-bottom: none;
+}
+
+.appointments-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Botón para cancelar citas como administrador */
+.btn-cancel-admin-appointment {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-cancel-admin-appointment:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+.btn-cancel-admin-appointment i {
+    font-size: 14px;
+}
+
+/* Estilos para el selector de razón de cancelación */
+.reason-selector-group {
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    border-left: 4px solid #0077cc;
+}
+
+.reason-selector-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #495057;
+    font-weight: 600;
+}
+
+.reason-selector {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #495057;
+    background-color: white;
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%230077cc' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+.reason-selector:focus {
+    outline: none;
+    border-color: #0077cc;
+    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.25);
+}
+
+.reason-option {
+    padding: 10px;
+}
+
+.reason-option-vacation {
+    color: #17a2b8;
+}
+
+.reason-option-illness {
+    color: #dc3545;
+}
+
+.reason-error {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.reason-error.visible {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos para el mensaje de éxito */
+.success-message-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.success-icon {
+    font-size: 48px;
+    color: #28a745;
+    margin-bottom: 15px;
+    animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Botón mejorado para volver al panel de administración */
+.btn-back-admin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #4a6fa5, #2c3e50);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 20px;
+    text-align: center;
+    width: fit-content;
+}
+
+.btn-back-admin:hover {
+    background: linear-gradient(135deg, #5c84bd, #3d5266);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-back-admin i {
+    font-size: 18px;
+}
+
+.admin-back-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}

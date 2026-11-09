@@ -1,0 +1,86 @@
+/* Estilos para el modal de citas canceladas */
+.canceled-appointments-modal .modal-content {
+    max-width: 600px;
+}
+
+.canceled-appointments-container {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f0f7ff;  /* Fondo azul clarito */
+    border-radius: 12px;        /* Bordes más redondeados */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #d0e4ff;
+}
+
+.canceled-appointment-item {
+    display: flex;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease;
+}
+
+.canceled-appointment-item:hover {
+    transform: translateY(-2px);
+}
+
+.canceled-appointment-item:last-child {
+    margin-bottom: 0;
+}
+
+.appointment-content {
+    flex: 1;
+}
+
+/* Estilo para el rectángulo azul de información de cita cancelada */
+.appointment-info-box {
+    background-color: #e1f5fe;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #b3e5fc;
+    box-shadow: 0 2px 5px rgba(0, 119, 204, 0.1);
+}
+
+.appointment-message {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #343a40;
+    font-size: 16px;
+}
+
+.appointment-date {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.modal-intro {
+    text-align: center;
+    margin: 15px 0;
+    font-weight: 500;
+    color: #0077cc;
+}
+
+.modal-action {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #dc3545;
+    background-color: #fff8f8;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px dashed #ffc6c6;
+}
+
+/* Estilo específico para el botón Entendido */
+#understand-button {
+    min-width: 150px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 119, 204, 0.3);
+}
+
+#understand-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 119, 204, 0.4);
+}

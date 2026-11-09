@@ -1,0 +1,3700 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to bottom, #e6f2ff, #ffffff);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 119, 204, 0.1);
+    position: static;
+    /* Cambiar de sticky a static */
+    z-index: 10;
+    /* Reducir z-index para que no esté por encima de otros elementos */
+    transition: all 0.3s ease;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #0077cc;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #0077cc;
+}
+
+/* Estilos para el logo */
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 8px;
+    /* Ajusta este valor según necesites */
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0077cc;
+    margin-left: 10px;
+}
+
+@media (max-width: 576px) {
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .logo-img {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+/* Hero section */
+.hero {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #0077cc;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Carousel */
+.carousel {
+    padding: 3.75rem 0;
+    /* 60px → 3.75rem */
+}
+
+.carousel h2 {
+    text-align: center;
+    margin-bottom: 1.875rem;
+    /* 30px → 1.875rem */
+    color: #0077cc;
+}
+
+/* Contenedor del carrusel con ancho adaptable */
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    /* Eliminado tamaño máximo */
+    width: 95%;
+    /* Aumentado del 90% al 95% para hacerlo más grande */
+    margin: 0 auto;
+    height: 70vh;
+    /* Cambiado de 550px a 70vh (70% de la altura de la ventana) */
+    overflow: hidden;
+    border-radius: 0.75rem;
+    /* 12px → 0.75rem */
+    box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.15);
+    /* 6px 12px → 0.375rem 0.75rem */
+}
+
+/* Contenedor de las diapositivas */
+.carousel-slides {
+    height: 100%;
+    width: 100%;
+}
+
+/* Diapositivas individuales */
+.slide {
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+/* Imágenes dentro de las diapositivas con tamaño exacto */
+.slide img {
+    width: 100%;
+    height: 100%;
+    /* Cambiado a 100% para ocupar todo el contenedor */
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.75rem;
+    /* 12px → 0.75rem */
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.625rem 0.9375rem;
+    /* 10px 15px → 0.625rem 0.9375rem */
+    cursor: pointer;
+    font-size: 1.125rem;
+    /* 18px → 1.125rem */
+    border-radius: 0.25rem;
+    /* 4px → 0.25rem */
+    transition: background-color 0.3s;
+}
+
+/* Añade estas líneas para posicionar los botones */
+.carousel-prev {
+    left: 1.25rem;
+    /* 20px */
+}
+
+.carousel-next {
+    right: 1.25rem;
+    /* 20px */
+}
+
+/* Mejora el efecto hover */
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Media queries adaptadas */
+@media (max-width: 992px) {
+    .carousel-container {
+        height: 60vh;
+        /* Reducido para pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 50vh;
+        /* Reducido aún más para móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        height: 40vh;
+        /* Aún más pequeño para móviles pequeños */
+    }
+}
+
+/* Tratamientos */
+.tratamientos {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.tratamientos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #0077cc;
+}
+
+/* Estilos mejorados para los tratamientos con cajas redondeadas */
+.tratamiento-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 30px;
+    background-color: #e6f2ff;
+    /* Fondo azul clarito */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tratamiento-item.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Ajustes para el contenedor de imagen */
+.tratamiento-img {
+    flex: 0 0 35%;
+    max-width: 350px;
+}
+
+.tratamiento-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para el contenedor de texto */
+.tratamiento-info {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.tratamiento-info h3 {
+    color: #0077cc;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.tratamiento-info p {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Mantener los ajustes responsivos para pantallas medianas y pequeñas */
+@media (max-width: 992px) {
+    .tratamiento-img {
+        flex: 0 0 35%;
+        max-width: 250px;
+        /* Aún más pequeño en pantallas medianas */
+    }
+}
+
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+
+    .tratamiento-item,
+    .tratamiento-item.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .tratamiento-img {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .tratamiento-img img {
+        max-width: 250px;
+        /* Reducido de 350px a 250px */
+        margin: 0 auto;
+    }
+
+    .tratamiento-info {
+        padding: 10px 5px 0;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0 20px;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.footer-logo,
+.footer-contact {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-logo h3 {
+    color: #0077cc;
+    margin-bottom: 10px;
+}
+
+.footer-contact h4 {
+    color: #0077cc;
+    margin-bottom: 15px;
+}
+
+/* Actualización de estilos para los iconos sociales dentro de contacto */
+.footer-contact .social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.footer-contact .social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #0077cc;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-contact .social-icons a:hover {
+    background-color: #005599;
+    transform: translateY(-3px);
+}
+
+.footer-contact .social-icons i {
+    font-size: 20px;
+}
+
+/* Para dispositivos móviles pequeños */
+@media (max-width: 576px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-contact .social-icons {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-contact .social-icons a {
+        padding: 6px 10px;
+    }
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo en el footer */
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo-img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    /* Ajusta este valor según necesites */
+}
+
+/* PARA LA PÁGINA DE AUTENTICACIÓN */
+.auth-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.auth-tabs {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.tab-links {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-link {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    background: #f8f9fa;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.tab-link.active {
+    background: #0077cc;
+    color: white;
+}
+
+.auth-forms {
+    background: #e6f2ff;
+    /* Fondo azul clarito */
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.error-container {
+    margin: 15px 0;
+    color: #721c24;
+    background-color: #f8d7da;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #f5c6cb;
+}
+
+.error {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.form-title {
+    margin-bottom: 30px;
+    color: #0056a3;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.auth-form .form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #3399ff !important;
+    /* Azul medio-oscuro */
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #0056a3 !important;
+    /* Azul más oscuro al enfocar */
+    box-shadow: 0 0 0 2px rgba(0, 86, 163, 0.25);
+}
+
+.auth-form input.error {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+.auth-form .btn {
+    width: 100%;
+    padding: 14px;
+    background: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.auth-form .btn:hover {
+    background: #0056a3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Enlaces entre los formularios */
+.auth-links {
+    margin-top: 25px;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #cce0ff;
+}
+
+.auth-links p {
+    font-size: 15px;
+    color: #555;
+}
+
+.auth-links a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.auth-links a:hover {
+    color: #0056a3;
+    text-decoration: underline;
+}
+
+/* Añadimos un diseño responsive para pantallas pequeñas */
+@media (max-width: 576px) {
+    .auth-forms {
+        padding: 25px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+}
+
+/* Estilos mejorados con mayor especificidad */
+body .auth-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+body .auth-section .auth-tabs {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body .auth-section .auth-forms {
+    background: #e6f2ff !important;
+    /* Forzar el color de fondo */
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+body .auth-section .form-title {
+    margin-bottom: 30px;
+    color: #0056a3;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+body .auth-section .auth-form .form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+body .auth-section .auth-form input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #3399ff !important;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+body .auth-section .auth-form input:focus {
+    outline: none;
+    border-color: #0056a3 !important;
+    box-shadow: 0 0 0 2px rgba(0, 86, 163, 0.25);
+}
+
+body .auth-section .auth-form .btn {
+    width: 100%;
+    padding: 14px;
+    background: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Estilos para mensajes de error en tiempo real */
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    display: block;
+    text-align: left;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para mensajes de éxito */
+.success-message {
+    color: #28a745;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    display: block;
+    text-align: left;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Estilo para contenedores de imagen + texto */
+.tratamiento-item,
+.servicio-item,
+.imagen-texto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+/* Alternancia de imagen a izquierda y derecha */
+.tratamiento-item:nth-child(even),
+.servicio-item:nth-child(even),
+.imagen-texto:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Contenedores de imagen */
+.imagen-container {
+    flex: 0 0 40%;
+    max-width: 400px;
+}
+
+.imagen-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.imagen-container img:hover {
+    transform: scale(1.03);
+}
+
+/* Contenedor de texto */
+.texto-container {
+    flex: 1;
+}
+
+.texto-container h3 {
+    color: #0077cc;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.texto-container p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Adaptación para pantallas medianas */
+@media (max-width: 992px) {
+    .imagen-container {
+        flex: 0 0 45%;
+        max-width: 350px;
+    }
+
+    .carousel-container {
+        height: 60vh;
+        /* Reducido para pantallas medianas */
+    }
+}
+
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+
+    .tratamiento-item,
+    .servicio-item,
+    .imagen-texto {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .tratamiento-item:nth-child(even),
+    .servicio-item:nth-child(even),
+    .imagen-texto:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .imagen-container {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .imagen-container img {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .carousel-container {
+        height: 50vh;
+        /* Reducido aún más para móviles */
+    }
+
+    .slide img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        height: 40vh;
+        /* Aún más pequeño para móviles pequeños */
+    }
+}
+
+/* Añade estos estilos a tu archivo CSS */
+.admin-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    min-height: 80vh;
+}
+
+.admin-form-container,
+.admin-list-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.admin-form-container h3,
+.admin-list-container h3 {
+    color: #0077cc;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#product-form .form-group {
+    margin-bottom: 20px;
+}
+
+#product-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+#product-form input,
+#product-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#product-form textarea {
+    height: 150px;
+}
+
+#product-form input[type="file"] {
+    padding: 10px 0;
+}
+
+#product-form small {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.admin-table img {
+    border-radius: 4px;
+}
+
+.btn-edit,
+.btn-delete {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* Estilos para el perfil y panel de administración */
+.perfil-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    min-height: 80vh;
+}
+
+.admin-panel {
+    margin: 20px 0;
+}
+
+.admin-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.admin-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: #e6f2ff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-actions {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.admin-form,
+.admin-list {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.admin-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-form .form-group {
+    margin-bottom: 15px;
+}
+
+.admin-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.admin-form input,
+.admin-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.admin-form textarea {
+    height: 120px;
+}
+
+.admin-form small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+}
+
+.user-list ul,
+.product-list ul {
+    list-style: none;
+    padding: 0;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.user-list li,
+.product-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    padding: 14px 16px;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-list li:last-child,
+.product-list li:last-child {
+    border-bottom: none;
+}
+
+.user-list li:hover,
+.product-list li:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-delete-confirm,
+.btn-delete-product-confirm {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.btn-delete-confirm:hover,
+.btn-delete-product-confirm:hover {
+    background-color: #bd2130;
+}
+
+/* Estilos para el perfil de usuario normal */
+.user-profile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.profile-info,
+.user-actions {
+    background-color: #e6f2ff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.user-actions {
+    flex: 1;
+    min-width: 250px;
+}
+
+.info-item {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 119, 204, 0.2);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item .label {
+    display: block;
+    font-weight: 500;
+    color: #0077cc;
+    margin-bottom: 5px;
+}
+
+.info-item .value {
+    color: #333;
+}
+
+/* Estilos para alertas */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Añadir este estilo para mensajes informativos */
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reemplazar la animación fadeOut actual */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Estilos para alertas que se desvanecen */
+.alert.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+    /* Asegurar que no hay cambios en la posición horizontal */
+    left: 50% !important;
+    transform: translateX(-50%) translateY(0) !important;
+    transition: opacity 0.5s ease, transform 0.5s ease !important;
+}
+
+/* Añadir específicamente para la animación de salida */
+.alert.fade-out {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px) !important;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.alert.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+/* Estilos mejorados para la tienda */
+.shop-section {
+    padding: 3.75rem 0;
+    background-color: #f8f9fa;
+}
+
+.shop-section h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #0077cc;
+}
+
+.shop-section>.container>p {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Grid de productos */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.875rem;
+}
+
+/* Tarjeta de producto */
+.product-card {
+    background-color: #e6f2ff;
+    /* Mismo azul claro que los formularios */
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Imagen del producto */
+.product-image {
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 119, 204, 0.2);
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* Información del producto */
+.product-info {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-info h3 {
+    color: #0077cc;
+    margin-bottom: 0.625rem;
+    font-size: 1.25rem;
+}
+
+.product-description {
+    color: #333;
+    margin-bottom: 0.9375rem;
+    line-height: 1.5;
+    flex-grow: 1;
+    /* Para que ocupe el espacio disponible */
+}
+
+.product-price {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #0056a3;
+    margin-bottom: 0.9375rem;
+}
+
+.product-card .btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.product-card .btn:hover {
+    background-color: #0056a3;
+}
+
+/* Mensaje cuando no hay productos */
+.no-products {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2.5rem;
+    background-color: #e6f2ff;
+    border-radius: 0.75rem;
+    color: #0077cc;
+    font-size: 1.125rem;
+}
+
+/* Ajustes para dispositivos pequeños */
+@media (max-width: 768px) {
+    .products-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos del botón de carrito mejorado */
+.btn-carrito {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-carrito i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-carrito:hover {
+    background-color: #0056a3;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn-carrito:hover i {
+    transform: translateX(-0.25rem) rotate(-5deg);
+}
+
+.btn-carrito:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Efecto de onda al hacer clic */
+.btn-carrito::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.btn-carrito:active::after {
+    width: 200%;
+    height: 200%;
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+/* Estilos para el icono del carrito y su contador */
+/* Estilos para el contador del carrito */
+.cart-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cart-count {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    /* Mayor prioridad de visualización */
+}
+
+/* Asegurar que nunca esté vacío */
+.cart-count:empty::before {
+    content: "0";
+}
+
+/* Anular cualquier intento de ocultarlo */
+.cart-count[style*="display:none"],
+.cart-count[style*="display: none"],
+.cart-count[style*="visibility:hidden"],
+.cart-count[style*="visibility: hidden"],
+.cart-count[style*="opacity:0"],
+.cart-count[style*="opacity: 0"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.cart-link i {
+    font-size: 1.1rem;
+    color: #0077cc;
+}
+
+.cart-link:hover i {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* Estilos para el modal de datos de usuario */
+.user-data-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 0.75rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #e6f2ff;
+    border-bottom: 1px solid #d1e6ff;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #0077cc;
+    font-size: 1.25rem;
+}
+
+.close-modal {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0077cc;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: #005fa3;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+#user-data-form {
+    margin-top: 1rem;
+}
+
+#user-data-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+#user-data-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+#user-data-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+#user-data-form button {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos para la página del carrito */
+.cart-section {
+    padding: 3.75rem 0;
+    background-color: #f8f9fa;
+    min-height: 70vh;
+}
+
+.cart-section h2 {
+    text-align: center;
+    margin-bottom: 1.875rem;
+    color: #0077cc;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.875rem;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-table th {
+    background-color: #e6f2ff;
+    color: #0077cc;
+    font-weight: 600;
+}
+
+.cart-product {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-product img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.cart-quantity {
+    width: 8rem;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.quantity-controls button {
+    background-color: #f0f0f0;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.quantity-controls span {
+    padding: 0 1rem;
+    font-weight: 500;
+}
+
+.btn-remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-remove:before {
+    content: "\f1f8";
+    /* Código del icono de papelera en FontAwesome */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: inline-block;
+}
+
+.btn-remove:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+}
+
+.cart-summary {
+    text-align: right;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.cart-grand-total {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #0077cc;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1.5rem;
+}
+
+.cart-buttons .btn-secondary {
+    background-color: #f8f9fa;
+    border: 2px solid #0077cc;
+    color: #0077cc;
+    padding: 0.875rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cart-buttons .btn-secondary:hover {
+    background-color: #e9f4ff;
+    box-shadow: 0 5px 15px rgba(0, 119, 204, 0.1);
+}
+
+.cart-buttons .btn-secondary::before {
+    content: '←';
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.cart-buttons .btn-secondary:hover::before {
+    transform: translateX(-4px);
+}
+
+.cart-buttons .btn-primary {
+    background: linear-gradient(to right, #0077cc, #005fa3);
+    border: none;
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 119, 204, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cart-buttons .btn-primary:hover {
+    background: linear-gradient(to right, #0069b6, #004c82);
+    box-shadow: 0 6px 18px rgba(0, 119, 204, 0.4);
+}
+
+.cart-buttons .btn-primary::after {
+    content: '→';
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.cart-buttons .btn-primary:hover::after {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .cart-buttons {
+        flex-direction: column;
+    }
+
+    .cart-buttons .btn-secondary,
+    .cart-buttons .btn-primary {
+        width: 100%;
+    }
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 3rem;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+.empty-cart i {
+    color: #0077cc;
+    margin-bottom: 1rem;
+}
+
+.empty-cart p {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .cart-table {
+        font-size: 0.9rem;
+    }
+
+    .cart-product img {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .cart-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Estilos para el botón mejorado de "Ver productos" */
+.btn-ver-productos {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 119, 204, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+    text-align: center;
+    /* Añadido para centrar el texto */
+    width: auto;
+    /* Añadido para que el ancho se ajuste al contenido */
+    margin-left: auto;
+    /* Centrar horizontalmente */
+    margin-right: auto;
+    /* Centrar horizontalmente */
+    display: block;
+    /* Para que los márgenes automáticos funcionen */
+}
+
+/* Ajustar el icono */
+.btn-ver-productos i {
+    margin-right: 0;
+    /* Eliminar margen extra */
+    font-size: 1.2rem;
+}
+
+.btn-ver-productos:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 119, 204, 0.4);
+}
+
+.btn-ver-productos:hover i {
+    transform: rotate(15deg);
+}
+
+.btn-ver-productos::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+}
+
+.btn-ver-productos:hover::after {
+    transform: translateX(100%);
+    transition: transform 0.8s ease;
+}
+
+/* Estilos para texto de ayuda en inputs */
+.input-help {
+    display: block;
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+    font-style: italic;
+}
+
+/* Para campos inválidos */
+input:invalid+.input-help {
+    color: #dc3545;
+}
+
+/* Estilos para botones de confirmación en modales */
+.confirmation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.confirmation-buttons button {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.confirmation-buttons .btn-primary {
+    background-color: #0077cc;
+    border: 1px solid #0077cc;
+    color: white;
+}
+
+.confirmation-buttons .btn-primary:hover {
+    background-color: #005fa3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 119, 204, 0.2);
+}
+
+.confirmation-buttons .btn-secondary {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #666;
+}
+
+.confirmation-buttons .btn-secondary:hover {
+    background-color: #e9ecef;
+}
+
+/* Estilos para el mensaje de último producto */
+.product-name {
+    font-size: 1.2rem;
+    color: #0077cc;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background-color: #f0f7ff;
+    border-radius: 0.5rem;
+    border-left: 4px solid #0077cc;
+}
+
+/* Botón de eliminación en rojo */
+.btn-danger {
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #bd2130;
+    border-color: #bd2130;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+}
+
+/* Añadir al archivo CSS */
+.stock-alert {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.stock-alert p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.stock-alert p::before {
+    content: "\f071";
+    /* icono de exclamación */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+/* Cambiar la definición de grid para mostrar exactamente 3 columnas */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Exactamente 3 columnas */
+    gap: 1.875rem;
+}
+
+/* Mantener el diseño responsive */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos mejorados para botones de administración */
+.admin-actions .btn {
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.admin-actions .btn i {
+    font-size: 1.1rem;
+}
+
+.admin-actions .btn-primary {
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    border: none;
+}
+
+.admin-actions .btn-primary:hover {
+    background: linear-gradient(135deg, #005fa3, #004a80);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.admin-actions .btn-danger {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    border: none;
+}
+
+.admin-actions .btn-danger:hover {
+    background: linear-gradient(135deg, #c82333, #bd2130);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Botones de confirmación para eliminar */
+.btn-delete-confirm,
+.btn-delete-product-confirm,
+.btn-edit-product-confirm {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-edit-product-confirm {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+}
+
+.btn-delete-confirm:hover,
+.btn-delete-product-confirm:hover {
+    background: linear-gradient(135deg, #c82333, #a71d2a);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-edit-product-confirm:hover {
+    background: linear-gradient(135deg, #e0a800, #d39e00);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de editar producto con ancho completo en pantallas grandes */
+.btn-edit-full-width {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* En pantallas grandes, hacer que ocupe el ancho de los otros dos botones */
+@media (min-width: 769px) {
+    .admin-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .admin-actions .btn:not(.btn-edit-full-width) {
+        flex: 1;
+    }
+    
+    .btn-edit-full-width {
+        flex-basis: 100%;
+        width: 100%;
+    }
+}
+
+/* En pantallas pequeñas, mantener el comportamiento normal */
+@media (max-width: 768px) {
+    .btn-edit-full-width {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    /* Hacer que TODOS los botones de administración ocupen el ancho completo en móviles */
+    .admin-actions .btn {
+        width: 100%;
+        margin: 5px 0;
+        flex-basis: 100%;
+    }
+    
+    .admin-actions {
+        flex-direction: column;
+    }
+}
+
+/* Eliminar subrayado en botones de administración */
+.admin-actions .btn,
+.admin-actions a.btn {
+    text-decoration: none;
+}
+
+/* También para asegurar que no se subrayan al pasar el ratón */
+.admin-actions .btn:hover,
+.admin-actions a.btn:hover {
+    text-decoration: none;
+}
+
+/* Regla general para eliminar subrayado en todos los botones */
+.btn {
+    text-decoration: none;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+/* Mejoras para las tarjetas de administración */
+.admin-card {
+    border-radius: 10px;
+    padding: 20px 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    background: linear-gradient(145deg, #e6f2ff, #ffffff);
+    border-top: 5px solid #0077cc;
+    transition: all 0.3s ease;
+}
+
+.admin-card:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.admin-card h4 {
+    color: #0077cc;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    border-bottom: 2px dashed #cce5ff;
+    padding-bottom: 10px;
+}
+
+/* Efecto de desvanecimiento para los elementos que aparecen */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Estilos para el botón mejorado de cerrar sesión */
+.btn-logout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-logout i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-logout:hover i {
+    transform: translateX(3px) rotate(-5deg);
+}
+
+.btn-logout::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.btn-logout:active::after {
+    width: 300%;
+    height: 300%;
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+.btn-logout:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
+}
+
+/* Diseño responsive para pantallas pequeñas */
+@media (max-width: 576px) {
+    .btn-logout {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Estilos para el botón mejorado de guardar y continuar */
+#user-data-form button[type="submit"] {
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#user-data-form button[type="submit"]:hover {
+    background: linear-gradient(135deg, #005fa3, #004c82);
+    box-shadow: 0 6px 15px rgba(0, 119, 204, 0.4);
+    transform: translateY(-2px);
+}
+
+#user-data-form button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 119, 204, 0.3);
+}
+
+#user-data-form button[type="submit"]::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+/* Estilos para iconos en modales */
+.error-icon,
+.success-icon,
+.info-icon,
+.warning-icon {
+    text-align: center;
+    font-size: 48px;
+    margin: 20px 0;
+    animation: bounceIn 0.5s ease;
+}
+
+.error-icon {
+    color: #dc3545;
+}
+
+.success-icon {
+    color: #28a745;
+}
+
+.info-icon {
+    color: #0077cc;
+}
+
+.warning-icon {
+    color: #ffc107;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.modal-body p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Mejora para botones en modales */
+.modal-body .confirmation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-body .btn-danger {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+}
+
+.modal-body .btn-danger:hover {
+    background: linear-gradient(135deg, #bd2130, #a71d2a);
+}
+
+.modal-body .btn-primary {
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+}
+
+.modal-body .btn-primary:hover {
+    background: linear-gradient(135deg, #0069b6, #004c82);
+}
+
+.modal-body .btn-secondary {
+    background: #f8f9fa;
+    color: #343a40;
+    border: 1px solid #ddd;
+}
+
+.modal-body .btn-secondary:hover {
+    background: #e2e6ea;
+}
+
+/* Efecto de desvanecimiento para notificaciones */
+.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Estilo para el icono de información */
+.info-icon {
+    color: #0077cc;
+    text-align: center;
+    font-size: 48px;
+    margin: 20px 0;
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Estilos para el botón de citas */
+.btn-appointment {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 119, 204, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.btn-appointment i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.btn-appointment:hover {
+    background: linear-gradient(135deg, #005fa3, #004c82);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 119, 204, 0.5);
+    color: white;
+}
+
+.btn-appointment:hover i {
+    transform: translateY(-2px);
+}
+
+.btn-appointment::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.btn-appointment:active::after {
+    width: 300%;
+    height: 300%;
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+.btn-appointment:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 119, 204, 0.3);
+}
+
+/* Estilos para la sección de citas */
+.appointments-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.appointments-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+@media (max-width: 992px) {
+    .appointments-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.calendar-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.time-slots-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.time-slot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #e6f2ff;
+    transition: all 0.3s ease;
+}
+
+.time-slot.available {
+    border-left: 5px solid #28a745;
+}
+
+.time-slot.unavailable {
+    background-color: #f9f9f9;
+    border-left: 5px solid #dc3545;
+    opacity: 0.7;
+}
+
+.time-slot-time {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.time-slot-status {
+    font-size: 14px;
+}
+
+.time-slot.available .time-slot-status {
+    color: #28a745;
+}
+
+.time-slot.unavailable .time-slot-status {
+    color: #dc3545;
+}
+
+.time-slot .btn-reserve {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.time-slot .btn-reserve:hover {
+    background-color: #0056a3;
+    transform: translateY(-2px);
+}
+
+.time-slot .btn-reserve:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Estilos para la lista de citas del usuario */
+.user-appointments {
+    margin-top: 30px;
+}
+
+.appointment-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Eliminar la transición */
+    transition: none;
+}
+
+/* Eliminar completamente el efecto hover */
+.appointment-card:hover {
+    transform: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.appointment-date {
+    font-weight: 600;
+    font-size: 18px;
+    color: #0077cc;
+}
+
+.appointment-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.appointment-status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.appointment-status.confirmed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.appointment-status.completed {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.appointment-status.cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.appointment-details {
+    margin-bottom: 15px;
+}
+
+.appointment-detail {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.appointment-detail-label {
+    font-weight: 600;
+    width: 120px;
+    color: #555;
+}
+
+.appointment-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-cancel-appointment {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel-appointment:hover {
+    background-color: #c82333;
+}
+
+.no-slots-message,
+.no-appointments-message,
+.error-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    color: #6c757d;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.no-slots-message i,
+.no-appointments-message i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #6c757d;
+}
+
+.btn-add-appointment {
+    display: inline-block;
+    background-color: #0077cc;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-add-appointment:hover {
+    background-color: #005fa3;
+    transform: translateY(-2px);
+}
+
+.error-message {
+    background-color: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #dc3545;
+}
+
+.btn-cancel-appointment {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-cancel-appointment:hover {
+    background-color: #c82333;
+}
+
+.btn-reserve {
+    min-width: 120px;
+}
+
+.btn-reserve:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.appointment-details-preview {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.appointment-preview-item {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.preview-label {
+    font-weight: 600;
+    color: #555;
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.preview-value {
+    color: #0077cc;
+    font-weight: 500;
+}
+
+.confirmation-text {
+    text-align: center;
+    font-size: 16px;
+    margin: 20px 0;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Estilo para el botón de reservar cita en el perfil */
+.btn-appointment-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #0077cc;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-appointment-profile:hover {
+    background-color: #005fa3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 119, 204, 0.3);
+    color: white;
+}
+
+.btn-appointment-profile i {
+    font-size: 18px;
+}
+
+/* Estilos para los botones de cancelar cita en el perfil */
+.appointment-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-cancel-appointment {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel-appointment:hover {
+    background-color: #c82333;
+}
+
+.btn-cancel-appointment i {
+    font-size: 16px;
+}
+
+/* Mejoras para la sección de citas en el perfil */
+.user-appointments h2 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.appointment-card {
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Estilo actualizado para el botón de reservar cita en el perfil */
+.btn-appointment-profile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-appointment-profile i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.btn-appointment-profile:hover {
+    background: linear-gradient(135deg, #005fa3, #004c82);
+    box-shadow: 0 6px 15px rgba(0, 119, 204, 0.4);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-appointment-profile:hover i {
+    transform: translateX(3px) rotate(-5deg);
+}
+
+.btn-appointment-profile::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.btn-appointment-profile:active::after {
+    width: 300%;
+    height: 300%;
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+.btn-appointment-profile:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 119, 204, 0.3);
+}
+
+/* Estilos para la tabla de citas en el perfil de administrador */
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-table th,
+.appointments-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.appointments-table th {
+    background-color: #e6f2ff;
+    color: #0077cc;
+    font-weight: 600;
+}
+
+.appointments-table tr:last-child td {
+    border-bottom: none;
+}
+
+.appointments-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Botón para cancelar citas como administrador */
+.btn-cancel-admin-appointment {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-cancel-admin-appointment:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+
+}
+
+.btn-cancel-admin-appointment i {
+    font-size: 14px;
+}
+
+/* Estilos para la página de edición de perfil */
+.edit-profile-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+
+    margin: 0 auto;
+}
+
+.edit-profile-container .form-group {
+    margin-bottom: 20px;
+}
+
+.edit-profile-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.edit-profile-container input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.edit-profile-container .input-help {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.edit-profile-container .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.edit-profile-container .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-profile-container .btn-primary {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+}
+
+.edit-profile-container .btn-secondary {
+    background-color: #f8f9fa;
+    color: #212529;
+    border: 1px solid #dee2e6;
+    text-decoration: none;
+}
+
+.edit-profile-container .btn-primary:hover {
+    background-color: #0069d9;
+}
+
+.edit-profile-container .btn-secondary:hover {
+    background-color: #e2e6ea;
+}
+
+.btn-edit-profile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #4caf50, #3e8e41);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-edit-profile i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.btn-edit-profile:hover {
+    background: linear-gradient(135deg, #3e8e41, #357935);
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-edit-profile:hover i {
+    transform: translateX(3px) rotate(-5deg);
+}
+
+.btn-edit-profile::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.btn-edit-profile:active::after {
+    width: 300%;
+    height: 300%;
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+.btn-edit-profile:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Eliminar TODOS los movimientos hacia arriba de los bloques de citas */
+.appointment-card,
+.upcoming-appointment,
+.user-appointments .card,
+.appointment-block,
+.profile-appointment,
+.appointment-container>div {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Eliminar cualquier animación en hover */
+.appointment-card:hover,
+.upcoming-appointment:hover,
+.user-appointments .card:hover,
+.appointment-block:hover,
+.profile-appointment:hover,
+.appointment-container>div:hover {
+    transform: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+    /* Mantener sombra fija */
+}
+
+/* Agregar estos estilos al final del archivo */
+#understand-button {
+    min-width: 150px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#understand-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 119, 204, 0.4);
+}
+
+.success-message-container .success-icon {
+    font-size: 4rem;
+    color: #28a745;
+    margin: 0 auto 20px auto;
+    display: block;
+    text-align: center;
+}
+
+/* Estilos para menú móvil */
+.mobile-menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #0077cc;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: auto;
+    padding-right: 0;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%);
+        width: 80%;
+        background: white;
+        flex-direction: column;
+        z-index: 1000;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        min-height: 220px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    
+    nav ul li:not(:last-child) {
+        position: relative;
+    }
+    
+    nav ul li:not(:last-child):after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 1px;
+        background-color: #e0e0e0;
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+/* Estilo para el logo redondeado */
+.logo img {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para la validación de formularios */
+.error-field {
+    border: 2px solid #dc3545 !important;
+    background-color: rgba(255, 220, 220, 0.3) !important;
+}
+
+.success-field {
+    border: 2px solid #28a745 !important;
+    background-color: rgba(220, 255, 220, 0.3) !important;
+}
+
+.field-error {
+    display: none;
+    color: #dc3545;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Estilo para el resumen de errores */
+.error-summary {
+    background-color: #fff8f8;
+    border-left: 4px solid #dc3545;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.error-summary h4 {
+    color: #dc3545;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.error-summary ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.error-summary li {
+    margin-bottom: 5px;
+}
+
+/* Mejoras para la tabla del carrito en móviles */
+@media (max-width: 768px) {
+
+    /* Quitar el scroll horizontal */
+    .cart-section .container {
+        overflow-x: visible;
+        padding-bottom: 0;
+    }
+
+    .cart-table {
+        min-width: initial;
+        width: 100%;
+        display: block;
+    }
+
+    /* Ocultar encabezados en móviles */
+    .cart-table thead {
+        display: none;
+    }
+
+    /* Convertir filas en tarjetas */
+    .cart-table tbody,
+    .cart-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .cart-table tr {
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+    }
+
+    /* Convertir celdas en elementos de bloque con etiquetas */
+    .cart-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        text-align: right;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .cart-table td:last-child {
+        border-bottom: none;
+    }
+
+    /* Añadir etiquetas antes de cada celda */
+    .cart-table td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #0077cc;
+        float: left;
+        text-align: left;
+    }
+
+    /* Ajustar celda de producto */
+    .cart-table td.cart-product {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-table td.cart-product:before {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .cart-product img {
+        max-width: 80px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Ajustar controles de cantidad */
+    .cart-quantity-controls {
+        margin-left: auto;
+    }
+
+    /* Ajustar botones */
+    .btn-remove {
+        margin-left: auto;
+    }
+
+    /* Totales */
+    .cart-total {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Ajustar tamaño de botones + y - */
+.quantity-decrease,
+.quantity-increase {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Estilos para los controles de cantidad - Siempre horizontales en todas las pantallas */
+.cart-quantity-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-value {
+    min-width: 25px;
+    text-align: center;
+    display: inline-block;
+    font-weight: 600;
+}
+
+/* Estilos para el botón de ir a la tienda en el perfil */
+.btn-shop-profile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ff9800, #e68a00);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn-shop-profile:hover {
+    background: linear-gradient(135deg, #e68a00, #cc7a00);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 152, 100, 0.4);
+    color: white;
+}
+
+.btn-shop-profile i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.btn-shop-profile:hover i {
+    transform: translateX(3px) rotate(-5deg);
+}
+
+/* Estilos para el botón de administración en el perfil */
+.btn-admin-profile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn-admin-profile:hover {
+    background: linear-gradient(135deg, #5a6268, #3e4347);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(108, 117, 125, 0.4);
+    color: white;
+}
+
+.btn-admin-profile i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.btn-admin-profile:hover i {
+    transform: translateX(3px) rotate(-5deg);
+}
+
+/* Ajustes específicos para el carrito en móviles */
+@media (max-width: 768px) {
+
+    /* Ajustar la celda de cantidad para tener el mismo formato que las demás celdas */
+    .cart-table td.cart-quantity {
+        justify-content: space-between !important;
+    }
+
+    .cart-quantity-controls {
+        margin-left: auto !important;
+    }
+
+    /* 2. Hacer que la cajita del Total ocupe todo el ancho */
+    .cart-table tfoot {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    .cart-table tfoot tr {
+        width: 100% !important;
+        background-color: #e6f2ff !important;
+        padding: 15px !important;
+        border-radius: 8px !important;
+        margin-top: 15px !important;
+        display: block !important;
+    }
+
+    .cart-table tfoot td {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        border: none !important;
+        padding: 5px 0 !important;
+    }
+}
+
+/* Evitar saltos de línea en los horarios de las citas */
+@media (max-width: 768px) {
+
+    /* Para horarios en la tabla de citas */
+    .appointments-table td .hora-cita,
+    .appointments-table td:nth-child(2),
+    .hora-inicio-fin {
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+
+    /* Específicamente para el guión y horarios */
+    .appointments-table td:nth-child(2) span {
+        white-space: nowrap !important;
+    }
+}
+
+/* Ajustes para botón eliminar usuario en panel de administración */
+@media (max-width: 768px) {
+    .user-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 16px;
+    }
+    
+    .btn-delete-confirm {
+        margin-top: 10px;
+        margin-left: 0;
+        align-self: flex-start;
+    }
+}
+
+/* Centrar perfectamente los elementos del menú desplegable móvil */
+@media (max-width: 768px) {
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+}
+
+/* Ajuste específico para el contador del carrito en el menú móvil */
+@media (max-width: 768px) {
+    nav ul li {
+        position: relative;
+    }
+    
+    nav ul li .cart-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    nav ul li .cart-count {
+        position: sticky;
+        width: 18px;
+        height: 18px;
+        font-size: 11px;
+        background-color: #dc3545;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+}
+
+/* Solución definitiva para separar texto "Cantidad" de controles en móviles */
+@media (max-width: 768px) {
+    /* Forzar que la celda de cantidad use flexbox con separación total */
+    .cart-table td.cart-quantity {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Ocultar completamente el pseudo-elemento :before para esta celda */
+    .cart-table td.cart-quantity:before {
+        display: none !important;
+        content: none !important;
+    }
+    
+    /* El span "Cantidad" va completamente a la izquierda */
+    .quantity-label-mobile {
+        display: block !important;
+        font-weight: 600 !important;
+        color: #0077cc !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Los controles van completamente a la derecha */
+    .cart-quantity-controls {
+        margin-left: auto !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+/* Asegurar que en pantallas grandes no se vea el span adicional */
+@media (min-width: 769px) {
+    .quantity-label-mobile {
+        display: none !important;
+    }
+}
+
+/* Evitar salto de línea en texto "No disponible" en la tabla de citas */
+.appointments-table td {
+    white-space: nowrap;
+}
+
+/* Específicamente para evitar que "No disponible" se divida */
+.appointments-table td:contains("No disponible") {
+    white-space: nowrap !important;
+}
+
+/* Alternativa más general para mantener contenido de celdas en una línea */
+@media (max-width: 768px) {
+    .appointments-table td {
+        white-space: nowrap !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* Para el contenido específico de teléfono */
+    .appointments-table td[data-label="Teléfono"] {
+        white-space: nowrap !important;
+    }
+}
+
+/* Si necesitas una solución más específica para solo el texto "No disponible" */
+.no-phone-available {
+    white-space: nowrap !important;
+    display: inline-block !important;
+}
+
+/* Mejoras para las notificaciones de error de stock */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 400px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    overflow: hidden;
+    animation: slideInRight 0.4s ease-out;
+}
+
+.notification.error {
+    border-left: 5px solid #dc3545;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    gap: 12px;
+}
+
+.notification.error .notification-content i {
+    color: #dc3545;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.notification-content span {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.close-notification {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.close-notification:hover {
+    color: #666;
+}
+
+/* Animaciones para las notificaciones */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification.fadeOut {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 768px) {
+    .notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+        margin: 0 auto;
+    }
+    
+    .notification-content {
+        padding: 14px 16px;
+        gap: 10px;
+    }
+    
+    .notification-content span {
+        font-size: 13px;
+    }
+    
+    .close-notification {
+        top: 6px;
+        right: 10px;
+        font-size: 16px;
+    }
+}

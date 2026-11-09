@@ -1,0 +1,522 @@
+/* Estilos específicos para la gestión de disponibilidad */
+
+.date-picker {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.date-picker:focus {
+    border-color: #0077cc;
+    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+    outline: none;
+}
+
+/* Modificar el estilo para quitar las flechitas de los selectores */
+#block-reason, #block-reason-slot, #day-of-week {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    appearance: auto; /* Volver a usar el estilo por defecto del navegador */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#block-reason:focus, #block-reason-slot:focus, #day-of-week:focus {
+    border-color: #0077cc;
+    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+    outline: none;
+}
+
+.block-day-btn {
+    margin-top: 10px;
+}
+
+#other-reason {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+#other-reason:focus {
+    border-color: #0077cc;
+    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+    outline: none;
+}
+
+/* Estilos para los slots de tiempo con candados */
+.time-slot-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.time-slot-row.locked-slot {
+    position: relative;
+    background-color: #fff8f8;
+    border: 1px solid #dc3545;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(220, 53, 69, 0.15);
+    transition: all 0.3s ease;
+}
+
+.time-slot-row.locked-slot::before {
+    content: "⚠️ Bloqueado";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: #dc3545;
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+.slot-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.btn-lock-slot,
+.btn-unlock-slot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-lock-slot {
+    background-color: #0077cc;
+    color: white;
+}
+
+.btn-lock-slot:hover {
+    background-color: #005fa3;
+    transform: scale(1.1);
+}
+
+.btn-unlock-slot {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-unlock-slot:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}
+
+.form-group.half input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-group.half input[type="time"]:focus {
+    border-color: #0077cc;
+    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+    outline: none;
+}
+
+.btn-remove-slot {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(220, 53, 69, 0.3);
+}
+
+.btn-remove-slot:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+
+.btn-remove-slot i {
+    font-size: 14px;
+}
+
+#add-time-slot {
+    margin-bottom: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(108, 117, 125, 0.3);
+}
+
+#add-time-slot:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.4);
+}
+
+.blocked-days-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blocked-days-table th,
+.blocked-days-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.blocked-days-table th {
+    background-color: #e6f2ff;
+    color: #0077cc;
+    font-weight: 600;
+}
+
+.btn-unblock-day {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 5px rgba(40, 167, 69, 0.3);
+}
+
+.btn-unblock-day:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4);
+}
+
+.btn-unblock-day i {
+    font-size: 14px;
+}
+
+.error-message {
+    color: #dc3545;
+    padding: 10px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Reorganizar las tarjetas de disponibilidad */
+.availability-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Tarjetas más anchas para la primera fila */
+.wider-card {
+    grid-column: span 1;
+}
+
+/* Tarjeta a ancho completo para días bloqueados */
+.full-width-card {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+    .availability-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .wider-card {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .time-slot-row {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .form-group.half {
+        width: 100%;
+    }
+    
+    .btn-remove-slot {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Mejorar botones de guardar bloqueo y actualizar horarios */
+.btn-action-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 119, 204, 0.3);
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn-action-primary:hover {
+    background: linear-gradient(135deg, #0062a8, #004985);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 119, 204, 0.4);
+}
+
+.btn-action-primary:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 119, 204, 0.25);
+}
+
+.btn-action-primary i {
+    font-size: 18px;
+}
+
+.form-action-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Estilos para la tabla de horarios bloqueados */
+.blocked-hours-table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.blocked-hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.blocked-hours-table th {
+    background-color: #e6f2ff;
+    color: #0077cc;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.blocked-hours-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.blocked-hours-table tr:last-child td {
+    border-bottom: none;
+}
+
+.blocked-hours-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Contenedor de mensajes de éxito */
+.success-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.success-icon {
+    margin-bottom: 15px;
+}
+
+/* Asegurar visibilidad del selector de motivo */
+#block-reason-slot {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+#other-reason-slot {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+/* Estilo para el botón de desbloquear todos los horarios */
+.btn-unblock-day-hours {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #4a90e2, #2c77c5);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-unblock-day-hours:hover {
+    background: linear-gradient(135deg, #5c9fe6, #3d88d8);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-unblock-day-hours i {
+    font-size: 15px;
+}
+
+/* Estilos para el contenedor de mensajes de error */
+.error-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.technical-error {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    width: 100%;
+    word-break: break-word;
+}
+
+/* Mejoras para la tabla de días bloqueados en móviles */
+@media (max-width: 768px) {
+    .blocked-days-table-container {
+        width: 100%;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 10px;
+    }
+    
+    .blocked-days-table {
+        min-width: 500px; /* Asegura que la tabla tenga un ancho mínimo */
+    }
+}
+
+/* Mejoras para los horarios bloqueados en móviles */
+@media (max-width: 768px) {
+    .blocked-hours-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+    }
+    
+    .blocked-hours-table {
+        min-width: 500px;
+    }
+    
+    /* Hacer que los horarios aparezcan en columna */
+    .blocked-hours-table td {
+        white-space: normal;
+    }
+    
+    /* Agregar salto de línea después de cada horario */
+    .blocked-hours-table td .hora-bloque:after {
+        content: "";
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    /* Si los horarios están separados por comas en el HTML */
+    .blocked-hours-table td {
+        white-space: pre-line; /* Esto convertirá los espacios en saltos de línea */
+    }
+}
+
+/* Modificación para la tabla de citas de usuarios */
+@media (max-width: 768px) {
+    .admin-appointments-list {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Para scroll suave en iOS */
+        padding-bottom: 10px;
+    }
+    
+    .appointments-table {
+        min-width: 650px; /* Ancho mínimo para mantener la estructura */
+    }
+}

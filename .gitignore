@@ -1,0 +1,35 @@
+# Imágenes locales de la aplicación
+CLINICA_DENTAL/assets/img/
+
+# Documentación académica con datos personales
+CLINICA_DENTAL/Memoria PFC_IES ARBOLEDA Adrian Borjas.pdf
+CLINICA_DENTAL/Plantilla de Memoria PFC_IES ARBOLEDA_dgmh Adrian Borjas.docx
+
+# Herramientas de depuración y pruebas locales
+CLINICA_DENTAL/debug.php
+CLINICA_DENTAL/debug_session.php
+CLINICA_DENTAL/debug_appointment_notifications.php
+CLINICA_DENTAL/force_notification.php
+
+# Registros generados localmente
+CLINICA_DENTAL/logs/
+
+# Configuración local y secretos
+.env
+.env.*
+!.env.example
+CLINICA_DENTAL/includes/config.local.php
+
+# Archivos del sistema y del editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Copias y archivos temporales
+*.bak
+*.backup
+*.tmp
+*.temp
+~$*

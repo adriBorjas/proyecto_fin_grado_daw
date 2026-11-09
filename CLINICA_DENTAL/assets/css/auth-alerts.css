@@ -1,0 +1,15 @@
+.pending-product-alert {
+    margin-bottom: 20px;
+    background-color: #d4edff;
+    color: #004085;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #007bff;
+    display: flex;
+    align-items: center;
+}
+
+.pending-product-alert i {
+    font-size: 20px;
+    margin-right: 10px;
+}
